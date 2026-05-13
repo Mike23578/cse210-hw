@@ -1,33 +1,54 @@
 using System;
-
-Console.Write("Whats your grade percentage? ");
-string gradeInput = Console.ReadLine();
-double gradePercentage = double.Parse(gradeInput);
-
-if (gradePercentage < 70 || gradePercentage == 100)
+class Program
 {
-    if (gradePercentage >= 90)
+    static void Main(string[] args)
     {
-        Console.WriteLine("Your letter grade is: A");
+        Console.Write("What is your grade percentage? ");
+        string grade = Console.ReadLine();
+        int gradePercentage = int.Parse(grade);
+        string letter = "";
+
+        if (gradePercentage >=70)
+        {
+            if (gradePercentage >= 90)
+            {
+                letter = "A";
+            }
+            else if (gradePercentage >= 80)
+            {
+                letter = "B";
+            }
+            else if (gradePercentage >= 70)
+            {
+                letter = "C";
+            }
+        }
+
+        else if (gradePercentage <= 69)
+        {
+            if (gradePercentage >= 60)
+            {
+                letter = "D";
+            }
+            else if (gradePercentage < 60)
+            {
+                letter = "F";
+            }
+            else
+            {
+                Console.WriteLine("Invalid grade percentage.");
+            }
+        }
+
+        Console.WriteLine($"Your letter grade is: {letter}");
+
+        if (gradePercentage >= 70)
+        {
+            Console.WriteLine("Congratulations! You passed the class.");
+        }
+        else
+        {
+            Console.WriteLine("Unfortunately, you did not pass the class.");
+        }
     }
-    else if (gradePercentage >= 80)
-    {
-        Console.WriteLine("Your letter grade is: B");
-    }
-    else if (gradePercentage >= 70)
-    {
-        Console.WriteLine("Your letter grade is: C");
-    }
-    else if (gradePercentage >= 60)
-    {
-        Console.WriteLine("Your letter grade is: D");
-    }
-    else
-    {
-        Console.WriteLine("Your letter grade is: F");
-    }
-}
-else
-{
-    Console.WriteLine("Invalid grade percentage. Please enter a value between 0 and 100.");
 }
