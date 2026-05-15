@@ -5,8 +5,9 @@ class Program
     static void Main(string[] args)
     {
         DisplayWelcome();
-        PromptUserName();
-        PromptUserNumber();
+        string fullName = PromptUserName();
+        int favoriteNumber = PromptUserNumber();
+        Console.Write($"{fullName}, the square of your favorite number is: {SquareNumber(favoriteNumber)}");
     }
 
     static void DisplayWelcome()
