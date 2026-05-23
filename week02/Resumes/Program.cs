@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 class Program
 {
@@ -17,7 +18,14 @@ class Program
         job2._startYear = "2029";
         job2._endYear = "3000";
 
-        job1.DisplayJobDetails();
-        job2.DisplayJobDetails();
+        Resume firstLine = new Resume();
+        firstLine.jobList.Add(job1);
+        firstLine.jobList.Add(job2);
+        
+
+        Console.Write("Name: ");
+        string name = Console.ReadLine();
+        firstLine._personName = name;
+        firstLine.ShowJobs();
     }
 }
